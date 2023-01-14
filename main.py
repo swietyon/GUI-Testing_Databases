@@ -1,58 +1,105 @@
-import tkinter as tk
-import csv
+from PySide6.QtWidgets import (
+    QApplication
+    ,QMessageBox
+    ,QWidget
+    ,QLabel
+    ,QPushButton
+    ,QVBoxLayout
+)
 
-class Application(tk.Frame):
-    def __init__(self, master=None):
-        super().__init__(master)
-        self.master = master
-        self.grid()
-        self.create_widgets()
+app         = QApplication([])
+app.setStyle('macos')
+window      = QWidget()
+v_layout    = QVBoxLayout()
 
-    def create_widgets(self):
-        self.search_button = tk.Button(self)
-        self.search_button["text"] = "Search data"
-        self.search_button["command"] = self.search_data
-        self.search_button.grid(row=0, column=0)
+btn1 = QPushButton('button 1')
+btn2 = QPushButton('button 2')
+btn3 = QPushButton('button 3')
+btn4 = QPushButton('button 4')
+btn5 = QPushButton('button 5')
+btn6 = QPushButton('button 6')
+btn7 = QPushButton('button 7')
+btn8 = QPushButton('button 8')
+btn9 = QPushButton('button 9')
+btn10 = QPushButton('button 10')
 
-        self.add_button = tk.Button(self)
-        self.add_button["text"] = "Add data"
-        self.add_button["command"] = self.add_data
-        self.add_button.grid(row=0, column=1)
 
-        self.modify_button = tk.Button(self)
-        self.modify_button["text"] = "Modify data"
-        self.modify_button["command"] = self.modify_data
-        self.modify_button.grid(row=0, column=2)
+v_layout.addWidget(QLabel('GUI APP'))
+v_layout.addWidget(btn1)
+v_layout.addWidget(btn2)
+v_layout.addWidget(btn3)
+v_layout.addWidget(btn4)
+v_layout.addWidget(btn5)
+v_layout.addWidget(btn6)
+v_layout.addWidget(btn7)
+v_layout.addWidget(btn8)
+v_layout.addWidget(btn9)
+v_layout.addWidget(btn10)
 
-        self.delete_button = tk.Button(self)
-        self.delete_button["text"] = "Delete data"
-        self.delete_button["command"] = self.delete_data
-        self.delete_button.grid(row=0, column=3)
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",
-                              command=self.master.destroy)
-        self.quit.grid(row=1, column=3)
 
-    def search_data(self):
-        # kod do odczytu danych
-        print("search")
-        pass
+def mongo1_clicked():
+    alert = QMessageBox()
+    alert.setText('btn1')
+    alert.exec()
 
-    def add_data(self):
-        # kod do dodawania danych
-        print("add")
-        pass
+def mongo2_clicked():
+    alert = QMessageBox()
+    alert.setText('btn2')
+    alert.exec()
 
-    def modify_data(self):
-        # kod do modyfikowania danych
-        print("modify")
-        pass
+def mongo3_clicked():
+    alert = QMessageBox()
+    alert.setText('btn3')
+    alert.exec()
 
-    def delete_data(self):
-        # kod do usuwania danych
-        print("delete")
-        pass
+def mongo4_clicked():
+    alert = QMessageBox()
+    alert.setText('btn4')
+    alert.exec()
 
-root = tk.Tk()
-app = Application(master=root)
-app.mainloop()
+def mongo5_clicked():
+    alert = QMessageBox()
+    alert.setText('btn5')
+    alert.exec()
+
+def mongo6_clicked():
+    alert = QMessageBox()
+    alert.setText('btn6')
+    alert.exec()
+
+def mongo7_clicked():
+    alert = QMessageBox()
+    alert.setText('btn7')
+    alert.exec()
+
+def mongo8_clicked():
+    alert = QMessageBox()
+    alert.setText('btn8')
+    alert.exec()
+
+def mongo9_clicked():
+    alert = QMessageBox()
+    alert.setText('btn9')
+    alert.exec()
+
+def mongo10_clicked():
+    alert = QMessageBox()
+    alert.setText('btn10')
+    alert.exec()
+
+btn1.clicked.connect(mongo1_clicked)
+btn2.clicked.connect(mongo2_clicked)
+btn3.clicked.connect(mongo3_clicked)
+btn4.clicked.connect(mongo4_clicked)
+btn5.clicked.connect(mongo5_clicked)
+btn6.clicked.connect(mongo6_clicked)
+btn7.clicked.connect(mongo7_clicked)
+btn8.clicked.connect(mongo8_clicked)
+btn9.clicked.connect(mongo9_clicked)
+btn10.clicked.connect(mongo10_clicked)
+
+
+window.setLayout(v_layout)
+window.show()
+app.exec()
