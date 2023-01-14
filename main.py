@@ -23,7 +23,6 @@ btn8 = QPushButton('button 8')
 btn9 = QPushButton('button 9')
 btn10 = QPushButton('button 10')
 
-
 v_layout.addWidget(QLabel('GUI APP'))
 v_layout.addWidget(btn1)
 v_layout.addWidget(btn2)
